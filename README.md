@@ -1,2 +1,1 @@
 # appTinTuc
-thảo abc
