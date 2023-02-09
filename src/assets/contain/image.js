@@ -10,6 +10,12 @@ export const iconCompass = require("../Image/imageHome/compass.png");
 export const iconProfile = require("../Image/imageHome/Profile.png");
 export const iconSearch = require("../Image/imageHome/iconSearch.png");
 export const iconFilter = require("../Image/imageHome/iconFilter.png");
+export const trending = require("../Image/imageHome/trending.png");
+export const iconHomeActive = require("../Image/imageHome/homeActive.png");
+export const iconCompassActive = require("../Image/imageHome/compassActive.png");
+export const iconBookMarkActive = require("../Image/imageHome/BookMarkActive.png");
+export const ProfileActive = require("../Image/imageHome/ProfileActive.png");
+
 
 export default {
     imgPost,
@@ -24,4 +30,9 @@ export default {
     iconProfile,
     iconSearch,
     iconFilter,
+    trending,
+    iconHomeActive,
+    iconCompassActive,
+    iconBookMarkActive,
+    ProfileActive,
 }

@@ -1,8 +1,8 @@
 import { Image, StyleSheet,ScrollView, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import styles from '../../theme/DetailScreenCss/style'
-import icon from '../../assets/contain/icon'
-import image from '../../assets/contain/image'
+import styles from '../../../../theme/DetailScreenCss/style'
+import icon from '../../../../assets/contain/icon'
+import image from '../../../../assets/contain/image'
 
 const DetailScreen = () => {
   return (

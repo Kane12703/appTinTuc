@@ -2,7 +2,6 @@ import { StyleSheet, Text,Dimensions,FlatList,Image,SafeAreaView,TouchableOpacit
 import React, { useState } from 'react'
 import styles from '../../theme/HomeScreenCss/style'
 import icon from '../../assets/contain/icon'
-  
 const listTab=[
   {
     status:'All',

@@ -1,9 +1,9 @@
 import {Image, Text, TextInput, View,CheckBox, Touchable, TouchableOpacity, Button, Pressable } from 'react-native'
 import React from 'react'
-import styles from '../../theme/LoginCss/style'
-import icon from '../../assets/contain/icon'
+import styles from '../../../../theme/LoginCss/style'
+import icon from '../../../../assets/contain/icon'
 
-const Login = (props) => {
+const Register = (props) => {
     const{navigation}=props
   
   return (
@@ -58,12 +58,12 @@ const Login = (props) => {
         </View>
         <View style={styles.textBottom}>
             <Text style={styles.text}>don’t have an account ? </Text>
-            <Pressable onPress={() => navigation.navigate('Register')}>
-                <Text style={[styles.text,styles.textPrimary]}>Sign Up</Text>
+            <Pressable onPress={() => navigation.navigate('Login')}>
+                <Text style={[styles.text,styles.textPrimary]}>Register</Text>
             </Pressable>
         </View>
     </View>
   )
 }
 
-export default Login
+export default Register;

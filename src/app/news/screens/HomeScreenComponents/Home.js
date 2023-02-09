@@ -1,8 +1,9 @@
-import { StyleSheet, Text,Image, View, FlatList, TextInput } from 'react-native'
+import { StyleSheet, Text,Image, View, FlatList, TextInput, ScrollView } from 'react-native'
 import React from 'react'
-import styles from '../../theme/HomeScreenCss/styles'
-import image from '../../assets/contain/image'
-import icon from '../../assets/contain/icon'
+import styles from '../../../../theme/HomeScreenCss/styles'
+import image from '../../../../assets/contain/image'
+import icon from '../../../../assets/contain/icon'
+
 
 
 const Home = () => {
@@ -17,11 +18,11 @@ const Home = () => {
           <Text style={styles.title}>{title}</Text>
           <View style={styles.infomationPost}>
             <View style={styles.author}>
-              <Image style={styles.logoAuthor} source={require('../../assets/Image/imageHome/logoAuthor.png')}/>
+              <Image style={styles.logoAuthor} source={require('../../../../assets/Image/imageHome/logoAuthor.png')}/>
               <Text style={styles.textAuthor}>BBC News</Text>
             </View>
             <View style={styles.timePost}>
-              <Image style={styles.iconTime} source={require('../../assets/Image/imageHome/iconTime.png')}/>
+              <Image style={styles.iconTime} source={require('../../../../assets/Image/imageHome/iconTime.png')}/>
               <Text style={styles.textTime}>14m ago</Text>
             </View>
           </View>
@@ -38,63 +39,94 @@ const Home = () => {
     
   }
   return (
+    
     <View style={styles.container}>
-        <View style={styles.header}>
+      <View style={styles.header}>
             <Image source={image.logoApp} style={styles.logoHeader}/>
             <Image source={image.iconRing} style={styles.ring}/>
-        </View>
+      </View>
+      <ScrollView style={styles.body}>
         <View style={styles.inputSearch}>
-          <TextInput style={styles.input} placeholder={'Search'}/>
-          <Image source={image.iconSearch} style={styles.inputIconSearch}/>
-          <Image source={image.iconFilter} style={styles.inputIconFilter}/>
+            <TextInput style={styles.input} placeholder={'Search'}/>
+            <Image source={image.iconSearch} style={styles.inputIconSearch}/>
+            <Image source={image.iconFilter} style={styles.inputIconFilter}/>
         </View>
         <View style={styles.latest}>
-            <Text style={styles.textLatest}>Latest</Text>
-            <Text style={styles.textSeeAll}>See all</Text>
+              <Text style={styles.textLatest}>Trending</Text>
+              <Text style={styles.textSeeAll}>See all</Text>
+        </View>
+        <View style={styles.trending}>
+          <Image style={styles.imgTreding} source={image.trending}/>
+          <View style={styles.content}>
+            <Text style={styles.catagory}>Europe</Text>
+            <Text style={[styles.title,styles.titleTrending]}>Russian warship: Moskva sinks in Black Sea</Text>
+            <View style={styles.infomationPost}>
+              <View style={styles.author}>
+                <Image style={styles.logoAuthor} source={image.logoAuthor}/>
+                <Text style={styles.textAuthor}>BBC News</Text>
+              </View>
+              <View style={styles.timePost}>
+                <Image style={styles.iconTime} source={image.iconTime}/>
+                <Text style={styles.textTime}>14m ago</Text>
+              </View>
+           </View>
+         </View>
+        </View>
+
+        <View style={styles.latest}>
+              <Text style={styles.textLatest}>Latest</Text>
+              <Text style={styles.textSeeAll}>See all</Text>
         </View>
         <View>
-          <View style={styles.containerTabList}>
+            <View style={styles.containerTabList}>
+              <FlatList
+              data={dataTab}
+              renderItem={renderItemTab}
+              keyExtractor={Math.random}
+              showsHorizontalScrollIndicator={false} 
+              horizontal
+            />   
+            </View>
+          <View style={styles.listData}>
             <FlatList
-            data={dataTab}
-            renderItem={renderItemTab}
-            keyExtractor={Math.random}
-            showsHorizontalScrollIndicator={false} 
-            horizontal
-          />   
-          </View>
-        <View style={styles.listData}>
-          <FlatList
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={Math.random}
-            showsVerticalScrollIndicator={false} 
-            />  
-          </View>
+              data={data}
+              renderItem={renderItem}
+              keyExtractor={Math.random}
+              showsVerticalScrollIndicator={false} 
+              />   
+            
+            </View>
+            
         </View>
-        <View style={styles.bottomNavigation}>
-          <View style={styles.item}>
-              <Image style={styles.itemImage} source={image.iconHome}/>
-              <Text style={styles.texItem}>Home</Text>
-          </View>
-          <View style={styles.item}>
-              <Image style={styles.itemImage} source={image.iconBookMark}/>
-              <Text style={styles.texItem}>Explore</Text>
-          </View>
-          <View style={styles.item}>
-              <Image style={styles.itemImage} source={image.iconCompass}/>
-              <Text style={styles.texItem}>BookMark</Text>
-          </View>
-          <View style={styles.item}>
-              <Image style={styles.itemImage} source={image.iconProfile}/>
-              <Text style={styles.texItem}>Profile</Text>
-          </View>
-           
-        </View>
-        
+       
+      </ScrollView>
+      {/* <View style={styles.bottomNavigation}>
+            <View style={styles.item}>
+                <Image style={styles.itemImage} source={image.iconHome}/>
+                <Text style={styles.texItem}>Home</Text>
+            </View>
+            <View style={styles.item}>
+                <Image style={styles.itemImage} source={image.iconBookMark}/>
+                <Text style={styles.texItem}>Explore</Text>
+            </View>
+            <View style={styles.item}>
+                <Image style={styles.itemImage} source={image.iconCompass}/>
+                <Text style={styles.texItem}>BookMark</Text>
+            </View>
+            <View style={styles.item}>
+                <Image style={styles.itemImage} source={image.iconProfile}/>
+                <Text style={styles.texItem}>Profile</Text>
+            </View>
+            
+        </View> */}
+        {/* <TabBottomApp/> */}
+
 
         
      
     </View>
+
+    
   )
 }
 

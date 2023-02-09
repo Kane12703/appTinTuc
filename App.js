@@ -1,29 +1,24 @@
 import { View,Text} from 'react-native'
 import React from 'react'
-import {Login,DetailScreen,HomeSreen,Home} from './src/components'
-import Register from './src/components/RegisterComponents/Register'
+// import {Login,DetailScreen,Home} from './src/app/user/screens'
 //navigation
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { UserProvider } from './src/app/user/utilities/userContext';
+import AppNavigation from './src/app/appNavigations/AppNavigation';
+import { NewsProvider } from './src/app/news/utilities/NewsContext';
 
 
-const Stack = createNativeStackNavigator();
 
 
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-      </Stack.Navigator>
-   </NavigationContainer>
-    // <DetailScreen/>
-    // <HomeSreen/>
-    // <Home/>
-    // <Register/>
+    <UserProvider>
+      <NewsProvider>
+        <AppNavigation/>
+      </NewsProvider>
+    </UserProvider>
   )
+
 }
 
 export default App

@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     },
    
     listData:{
-        height:400,
+      
     },
     input:{
         paddingVertical:10,
@@ -181,10 +181,20 @@ const styles = StyleSheet.create({
         right:30,
         top:30,
     },
+    imgTreding:{
+        width:'100%',
+        height:183,
+        borderRadius:6,
+    },
   
- 
+    titleTrending:{
+        width:'100%',
+    },
+    trending:{
+        padding:15,
+    },
 
-
+  
 
 
 })
